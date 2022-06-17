@@ -563,7 +563,7 @@ send_pcf8574_b2_rising()
   i2cset -y 1 0x20 $byte
   
   i2cset -y 6 0x20 $(($ctrl&0xFD))
-  sleep 0.2
+  sleep 0.001
   i2cset -y 6 0x20 $(($ctrl|0x02))
   
   if [[ $ctrl -eq 0xf0 || $ctrl -eq 0xf2 ]]; then
